@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <title>Card Generator</title>
+</head>
+<body class="bg-warning">
+  
+<div class="row">
+    <div class="container mt-5">
+      <div id="cardContainer" class="form-inline"></div>
+    </div>
+</div>
+
+<script>
+  // Dati JSON
+  const jsonData = [
+    {
+      image: "https://admin.leggimenu.it/uploads/voci/79qk7f2k7lq2/2448631896365485e611162.77107123.jpg",
+      title: "San Marzano",
+      description: "Pomodoro San Marzano, fior di latte di Agerola e basilico",
+      prezzo:"€ 6,50"
+    },
+    {
+      image: "https://admin.leggimenu.it/uploads/voci/79qk7f2k7lq2/2448631896365485e611162.77107123.jpg",
+      title: "San Marzano",
+      description: "Pomodoro San Marzano, fior di latte di Agerola e basilico",
+      prezzo:"€ 6,50"
+    },
+    {
+      image: "https://admin.leggimenu.it/uploads/voci/79qk7f2k7lq2/2448631896365485e611162.77107123.jpg",
+      title: "San Marzano",
+      description: "Pomodoro San Marzano, fior di latte di Agerola e basilico",
+      prezzo:"€ 6,50"
+    },
+    {
+      image: "https://admin.leggimenu.it/uploads/voci/79qk7f2k7lq2/2448631896365485e611162.77107123.jpg",
+      title: "San Marzano",
+      description: "Pomodoro San Marzano, fior di latte di Agerola e basilico",
+      prezzo:"€ 6,50"
+    },
+    {
+      image: "https://admin.leggimenu.it/uploads/voci/79qk7f2k7lq2/2448631896365485e611162.77107123.jpg",
+      title: "San Marzano",
+      description: "Pomodoro San Marzano, fior di latte di Agerola e basilico",
+      prezzo:"€ 6,50"
+    },
+    {
+      image: "https://admin.leggimenu.it/uploads/voci/79qk7f2k7lq2/2448631896365485e611162.77107123.jpg",
+      title: "San Marzano",
+      description: "Pomodoro San Marzano, fior di latte di Agerola e basilico",
+      prezzo:"€ 6,50"
+    },
+    // Aggiungi più oggetti JSON secondo necessità
+  ];
+
+  // Funzione per creare una card
+  function createCard(data) {
+    const cardContainer = document.getElementById("cardContainer");
+
+    const card = document.createElement("div");
+    card.className = "col-md-4 mb-3";
+
+    card.innerHTML = `
+        <div class="card bg-warning-subtle" style="width: 18rem;">
+            <img src="${data.image}" class="card-img-top " alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${data.title}</h5>
+                <p class="card-text">${data.description}</p>
+                <hr / color="white">
+                <div class="text-center"> 
+                <a href="#" class="btn btn-primary text-center ">${data.prezzo}</a>
+                </div>
+            </div>
+        </div>
+    `;
+
+    cardContainer.appendChild(card);
+  }
+
+  // Ciclo per creare le card utilizzando i dati JSON
+  jsonData.forEach((item) => createCard(item));
+</script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
